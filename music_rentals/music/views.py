@@ -32,5 +32,3 @@ class AlbumDelete(DeleteView):
 
 
 
-
-
