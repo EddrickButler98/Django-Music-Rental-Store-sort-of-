@@ -1,1 +1,6 @@
-{% extends 'music/base.html' %} {% block body %}
+ {% extends 'music/base.html' %}
+ <title>{% block title %}Putting {{ object.album_name }} In Your Inventory | MiTunes Music{% endblock %}</title>
+ <h1>{{ object.genre }}</h1>
+ <div class="container">
+  <img src="{{ object.album_logo }}">
+</div>

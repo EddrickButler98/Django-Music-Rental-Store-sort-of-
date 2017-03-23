@@ -28,6 +28,13 @@ class AlbumDelete(DeleteView):
 	model = Album
 	success_url = reverse_lazy('music:index')
 
+class AlbumInventory(DetailView):
+	model = Album
+	template_name = 'music/inventory.html'
+
+class AlbumRent(DetailView):
+	model = Album
+	template_name = 'music/rent.html'
 
 
 

@@ -12,11 +12,17 @@ urlpatterns = [
 				url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
 
 				#/music/album/add/
-				url(r'album/add$', views.AlbumCreate.as_view(), name='album-add'),
+				url(r'album/add/$', views.AlbumCreate.as_view(), name='album-add'),
 
 				#/music/album/2/
 				url(r'album/(?P<pk>[0-9]+)/$', views.AlbumUpdate.as_view(), name='album-update'),
 
 				#/music/album/2/delete/
 				url(r'(?P<pk>[0-9]+)/delete/$', views.AlbumDelete.as_view(), name='album-delete'),
+
+				#/music/album/2/inventory/
+				url(r'album/inventory/$', views.AlbumInventory.as_view(), name='inventory'),
+
+				#/music/album/2/rent/
+				url(r'(?P<pk>[0-9]+)/rent/$', views.AlbumRent.as_view(), name='rent'),
 ]

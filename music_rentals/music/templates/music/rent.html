@@ -1,0 +1,23 @@
+ {% extends 'music/base.html' %} {% block body %}{% if all_albums %}
+ <title>{% block title %}Renting {{ object.album_name }}.. | MiTunes Music{% endblock %}</title>
+ {% endif %}
+ <div class="jumbotron">
+     <center>
+     <h2 class="google_font">You Are Renting... </h2>
+     </center>
+ </div>
+ <div class="container-fluid">
+     <div class="row">
+         <div class="panel panel-default">
+             <div class="panel-body">
+                 <div><p style="float: left;"><img src="{{ object.album_logo }}"  style="border-radius: 150px;"></p>
+<h1 id="google">{{ object.artist }}<br>
+    <small>{{ object.genre }}</small>
+</h1>
+</div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+{% endblock %}

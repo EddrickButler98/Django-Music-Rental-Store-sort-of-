@@ -33,8 +33,8 @@
                         </a>
                     </li>
                     <li class="">
-                        <a href="{% url 'music:index' %}">
-                            <span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp; Songs
+                        <a href="{% url 'music:inventory' %}">
+                            <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>&nbsp; Inventory
                         </a>
                     </li>
                 </ul>
@@ -60,6 +60,8 @@
             </div>
         </div>
     </nav>
+    <br>
+    <br>
     {% block body %} {% endblock %}
 </body>
 

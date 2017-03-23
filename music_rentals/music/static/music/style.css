@@ -28,3 +28,7 @@ body {
 .roboto {
     font-family: 'Roboto', sans-serif;
 }
+
+#summary {
+    text-align: right;
+}

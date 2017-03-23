@@ -2,8 +2,8 @@
 <div class="jumbotron">
     <center>
         <h1 class="google_font">Welcome To MiTunes Music Rentals 2.0</h1>
-        <p class="google_font">Don't Hesitate, Just Appreciate!</p>
-        <p class="google_font">Take Your Time And BROWSE!!</p>
+        <p class="google_font">The Following Albums Are In The Inventory</p>
+        <p class="google_font">To Add To The Inventory, Please select the 'Add To Inventory Button' at the top of the page!</p>
         <p class="google_font">More Responsive, More Understandable, More Music!</p>
         <p><a class="btn btn-primary btn-lg" href="#albums" role="button">What's At The Bottom?</a></p>
     </center>
@@ -24,7 +24,7 @@
                         <a href="{% url 'music:detail' album.id %}" class="btn btn-primary">Album Details</a>
                         <button class="btn btn-default"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
                         <button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-                        <button class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></button>
+                        <a href="{% url 'music:inventory' %}"><button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button></a>
                     </div>
                 </div>
             </div>

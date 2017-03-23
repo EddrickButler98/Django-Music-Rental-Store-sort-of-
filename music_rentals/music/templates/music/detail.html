@@ -25,8 +25,7 @@
                         </form>
                     </div>
                     <br>
-                    <center><button type="submit" class="btn btn-primary">Rent This Album</button></center>
-
+                    <a href="{% url 'music:rent' album.id %}"><center><button type="submit" class="btn btn-primary">Rent This Album</button></center></a>
                 </div>
             </div>
             <script>
