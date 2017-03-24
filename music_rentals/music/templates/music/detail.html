@@ -20,11 +20,12 @@
                             <br id="google"> Item Price: ${{ album.album_total }}
                             <input type='button' name='subtract' class="btn btn-danger" onclick='Total("qty",-1,"total",{{ album.album_total }});' value='-' />
                             <input type='button' name='add' class="btn btn-success" onclick='Total("qty",1,"total", {{ album.album_total }});' value='+' />
-                            <h2 id="google">Quantity</h2><input class="roboto" type='text' name='qty' id='qty' readonly=true value="0" />
-                            <h2 id="google">Total Price w/ sales tax:</h2><input class="roboto" type='text' name='total' id='total' value="0" />
+                            <h2 id="google">Quantity</h2><input class="roboto" type='text' name='qty' id='qty' readonly=true value="{{ album.quantity }}" />
+                            <h2 id="google">Total Price w/ sales tax:</h2><input class="roboto" type='text' name='total' id='total' value="{{ album.album_total }}" />
                         </form>
                     </div>
                     <br>
+                    <a href="{% url 'music:inventory' album.id %}"><input type="checkbox">Inventory</a>
                     <a href="{% url 'music:rent' album.id %}"><center><button type="submit" class="btn btn-primary">Rent This Album</button></center></a>
                 </div>
             </div>
@@ -35,12 +36,7 @@
                     qty.value = Math.max(qty.value, 0);
                     document.getElementById(total).value = qty.value * value;
                 }
-            </script>
-            </head>
-
-            <body>
-        </div>
-
+            </script> 
 
         {% for song in album.song_set.all %} {{ song.song_title }} {% if song.is_favorite %}
         <img src="http://icons.iconarchive.com/icons/aha-soft/multimedia/16/favourites-star-SH-icon.png"> {% endif %}

@@ -1,23 +1,37 @@
  {% extends 'music/base.html' %} {% block body %}{% if all_albums %}
- <title>{% block title %}Renting {{ object.album_name }}.. | MiTunes Music{% endblock %}</title>
- {% endif %}
- <div class="jumbotron">
-     <center>
-     <h2 class="google_font">You Are Renting... </h2>
-     </center>
- </div>
- <div class="container-fluid">
-     <div class="row">
-         <div class="panel panel-default">
-             <div class="panel-body">
-                 <div><p style="float: left;"><img src="{{ object.album_logo }}"  style="border-radius: 150px;"></p>
-<h1 id="google">{{ object.artist }}<br>
-    <small>{{ object.genre }}</small>
-</h1>
+<title>{% block title %}Renting {{ object.album_title }}.. | MiTunes Music{% endblock %}</title>
+{% endif %}
+<div class="jumbotron">
+    <center>
+        <h2 class="google_font">You Are Renting... </h2>
+    </center>
 </div>
-             </div>
-         </div>
-     </div>
- </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div>
+<!--                    <h1 style="float: left;">-->
+                        <img src="{{ object.album_logo }}" class="img-circle col-xs-4">
+<!--                    </h1>-->
+                    <h1 id="google">{{ object.album_title }}<br>
+                        <small>{{ object.artist }}<br>
+                            Released In {{ object.release_year }}<br>
+                        {{ object.genre }}
+                        {{ object.price }}
+                        </small>
+                    </h1>
+                    <input type="tel"> Card Number(Not Really)<br>
+                    <input type="password" placeholder="123-45-0000" min="1" max="4" length="7"> Last 4 Digits Of SSN(Not Really)<br>
+                    <input type="number">The Amount You're Paying?<br>
+                    <a href="{% url 'music:confirm' album.id %}">
+                    <button type="submit" class="btn btn-primary">Finished?</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
+

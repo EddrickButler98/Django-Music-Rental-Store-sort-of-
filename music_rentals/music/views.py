@@ -3,7 +3,6 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 from .models import Album
 
-
 class IndexView(generic.ListView):
 	template_name = 'music/index.html'
 	context_object_name = 'all_albums'
@@ -35,6 +34,10 @@ class AlbumInventory(DetailView):
 class AlbumRent(DetailView):
 	model = Album
 	template_name = 'music/rent.html'
+    
+class Confirm(DetailView):
+    model = Album
+    template_name = 'music/confirm.html'
 
 
 

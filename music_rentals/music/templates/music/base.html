@@ -5,6 +5,7 @@
     <title>{% block title %}Main Page | MiTunes Music{% endblock %}</title>
     {% load staticfiles%}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.css">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
@@ -32,13 +33,9 @@
                             <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Albums
                         </a>
                     </li>
-                    <li class="">
-                        <a href="{% url 'music:inventory' %}">
-                            <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>&nbsp; Inventory
-                        </a>
-                    </li>
+                    
                 </ul>
-                <form class="navbar-form navbar-left" role="search" method="get" action="#">
+                <form class="navbar-form navbar-left" role="search" method="get" action="#" id="searcher">
                     <div class="form-group">
                         <input type="text" class="form-control" name="query" value="">
                     </div>
@@ -49,11 +46,6 @@
                     <li class="">
                         <a href="{% url 'music:album-add' %}">
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Album To Inventory
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="#">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
                         </a>
                     </li>
                 </ul>

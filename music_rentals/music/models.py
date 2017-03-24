@@ -3,19 +3,20 @@ from django.core.urlresolvers import reverse
 
 
 class Album(models.Model):
-	artist = models.CharField(max_length=100)
-	album_title = models.CharField(max_length=500)
-	genre = models.CharField(max_length=50)
-	album_logo = models.URLField()
-	album_total = models.FloatField(default=0)
-	release_year = models.IntegerField(default=0)
-	quantity = models.IntegerField(default=1)
+    artist = models.CharField(max_length=100)
+    album_title = models.CharField(max_length=500)
+    genre = models.CharField(max_length=50)
+    album_logo = models.URLField()
+    album_total = models.FloatField(default=0)
+    release_year = models.IntegerField(default=0)
+    quantity = models.IntegerField(default=1)
+    inventory = models.BooleanField(default=False)
 
-	def get_absolute_url(self):
-			return reverse('music:detail', kwargs={'pk': self.pk})
+    def get_absolute_url(self):
+        return reverse('music:detail', kwargs={'pk': self.pk})
 
-	def __str__(self):
-		return self.album_title + ' - ' + self.artist
+    def __str__(self):
+        return self.album_title + ' - ' + self.artist
 
 
 class Song(models.Model):

@@ -32,3 +32,12 @@ body {
 #summary {
     text-align: right;
 }
+
+#searcher{
+    transition: 2s;
+}
+
+#searcher:focus{
+    width: 20px;
+    transition: 2s;
+}
