@@ -1,4 +1,19 @@
 {% extends 'music/base.html' %} {% block body %}{% if all_albums %}
 <title>{% block title %}Thank You For Buying {{ object.album_title }}! | MiTunes Music{% endblock %}</title>
 {% endif %}
+<div class="jumbotron">
+    <center>
+    <h1>Thank You For Purchasing {{ object.artist }}'s {{ object.album_title }} album!</h1>
+    <p>Enjoy Your Newly Rented Album</p>
+    <p>The Album "{{ object.album_title }}" by {{ object.artist }} will be due in a week from today!</p>
+    <blockquote>
+        <small>
+            MiTunes Music Rentals
+        </small>
+    </blockquote>
+    <a href="{% url 'music:index' %}">
+    <button class="btn btn-success">To Return To The Home Page Click Here</button>
+    </a>
+    </center>
+</div>
 {% endblock %}

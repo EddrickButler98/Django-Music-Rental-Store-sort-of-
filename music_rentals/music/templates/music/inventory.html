@@ -1,4 +1,4 @@
-{% extends 'music/base.html' %} {% block body %}
+{% extends 'music/base.html' %} {% block body %}{% if all_albums %}
 <div class="jumbotron">
     <center>
         <h1 class="google_font">Currently In Your Inventory</h1>
@@ -30,5 +30,10 @@
         {% endfor %}
     </div>
 </div>
-{% endblock %}
-<h3>You don't have any albums</h3>
+{% else %}
+<div class="jumbotron">
+    <center>
+        <h1 id="google_font">Sorry, No Albums Here. Try Again Later. Webpage Is Still In Maintenance Mode!</h1>
+    </center>
+</div>
+{% endif %} {% endblock %}

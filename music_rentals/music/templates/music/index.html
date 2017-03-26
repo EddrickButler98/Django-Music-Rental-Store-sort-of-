@@ -1,4 +1,4 @@
-{% extends 'music/base.html' %} {% block body %} {% if all_albums %} {% if album_total % }
+{% extends 'music/base.html' %} {% block body %} {% if all_albums %}
 <div class="jumbotron">
     <center>
         <h1 class="google_font">Welcome To MiTunes Music Rentals 2.0</h1>
@@ -22,8 +22,6 @@
                         <h2>{{ album.album_title }}</h2>
                         <h4>{{ album.artist }}</h4>
                         <a href="{% url 'music:detail' album.id %}" class="btn btn-primary">Album Details</a>
-                        <button class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></button>
-                        <a href="{% url 'music:inventory' album.id %}"><button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button></a>
                     </div>
                 </div>
             </div>
